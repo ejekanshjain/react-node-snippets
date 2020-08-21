@@ -2,6 +2,14 @@
     "name": "react-node-snippets",
     "displayName": "React Node Snippets",
     "description": "This extension provides you some of the best JavaScript snippets used by me for MERN stack.",
+    "version": "0.0.1",
+    "keywords": [
+        "snippets",
+        "react",
+        "node",
+        "javascript"
+    ],
+    "license": "MIT",
     "author": "Ekansh Jain",
     "repository": {
         "type": "git",
@@ -11,7 +19,6 @@
         "url": "https://github.com/ejekanshjain/react-node-snippets/issues"
     },
     "homepage": "https://github.com/ejekanshjain/react-node-snippets#readme",
-    "version": "0.0.1",
     "engines": {
         "vscode": "^1.48.0"
     },
