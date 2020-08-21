@@ -11,6 +11,7 @@
     ],
     "license": "MIT",
     "author": "Ekansh Jain",
+    "publisher": "ej",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/ejekanshjain/react-node-snippets.git"
