@@ -38,7 +38,6 @@ git clone https://github.com/ejekanshjain/react-node-snippets.git ej.react-node-
 - JavaScript (.js)
 
 ## Usage
-
 ### JavaScript
 |  Prefix | Method                                              |
 | ------: | --------------------------------------------------- |
@@ -51,7 +50,6 @@ git clone https://github.com/ejekanshjain/react-node-snippets.git ej.react-node-
 |  `afn→` | `Creates an anonymous function`                     |
 |  `fre→` | `Creates a forEach statement`                       |
 
-
 ### Node
 |  Prefix | Method                                                      |
 | ------: | ----------------------------------------------------------- |
@@ -63,7 +61,6 @@ git clone https://github.com/ejekanshjain/react-node-snippets.git ej.react-node-
 |     `mc→` | `Creates a Mongoose Connection`                           |
 |     `mm→` | `Creates a Mongoose Model`                                |
 
-
 ### React
 |  Prefix | Method                                                  |
 | ------: | ------------------------------------------------------- |
@@ -74,6 +71,3 @@ git clone https://github.com/ejekanshjain/react-node-snippets.git ej.react-node-
 |`useEffect→` | `React useEffect hook`                              |
 |`useContext→`| `React useContext hook`                             |
 |   `useRef→` | `React useRef hook`                                 |
-
-
-**Enjoy!**
