@@ -2,7 +2,7 @@
     "name": "react-node-snippets",
     "displayName": "React Node Snippets",
     "description": "This extension provides you some of the best JavaScript snippets used by me for MERN stack.",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "keywords": [
         "snippets",
         "react",
