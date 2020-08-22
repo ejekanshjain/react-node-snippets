@@ -37,11 +37,43 @@ git clone https://github.com/ejekanshjain/react-node-snippets.git ej.react-node-
 
 - JavaScript (.js)
 
-## Features
-coming soon
+## Usage
 
-## Known Issues
+### JavaScript
+|  Prefix | Method                                              |
+| ------: | --------------------------------------------------- |
+|  `clg→` | `Log output to console`                             |
+|  `cle→` | `Log error to console`                              |
+|   `rq→` | `require statement`                                 |
+|  `imp→` | `import statement`                                  |
+|  `tpf→` | `typeof variable`                                   |
+|  `nfn→` | `Creates a named function`                          |
+|  `afn→` | `Creates an anonymous function`                     |
+|  `fre→` | `Creates a forEach statement`                       |
 
-No known issues.
+
+### Node
+|  Prefix | Method                                                      |
+| ------: | ----------------------------------------------------------- |
+| `expapp→` | `Creates an express app`                                  |
+| `expapi→` | `Creates an express api server with cors`                 |
+|   `expr→` | `Creates an express router`                               |
+|  `exprf→` | `Creates a full express router`                           |
+| `exprfa→` | `Creates a full express router with async callbacks`      |
+|     `mc→` | `Creates a Mongoose Connection`                           |
+|     `mm→` | `Creates a Mongoose Model`                                |
+
+
+### React
+|  Prefix | Method                                                  |
+| ------: | ------------------------------------------------------- |
+|      `rfc→` | `Creates a React Functional Component`              |
+|     `rfcp→` | `Creates a React Functional Component with props`   |
+|     `rctx→` | `Creates and exports React context`                 |
+| `useState→` | `React useState hook`                               |
+|`useEffect→` | `React useEffect hook`                              |
+|`useContext→`| `React useContext hook`                             |
+|   `useRef→` | `React useRef hook`                                 |
+
 
 **Enjoy!**
