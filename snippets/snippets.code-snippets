@@ -1,13 +1,98 @@
 {
-    "Print to console": {
+    "consoleLog": {
         "prefix": "clg",
         "body": [
             "console.log($0)"
         ],
         "description": "Log output to console"
     },
-    "Create express router": {
-        "prefix": "exr",
+    "consoleError": {
+        "prefix": "cle",
+        "body": [
+            "console.error($0)"
+        ],
+        "description": "Log error to console"
+    },
+    "require": {
+        "prefix": "rq",
+        "body": "const ${1} = require('${1}')$0",
+        "description": "require statement"
+    },
+    "import": {
+        "prefix": "imp",
+        "body": "import ${2} from '${1}'$0",
+        "description": "import statement"
+    },
+    "typeof": {
+        "prefix": "tpf",
+        "body": [
+            "typeof ${0}"
+        ],
+        "description": "type of variable"
+    },
+    "namedFunction": {
+        "prefix": "nfn",
+        "body": [
+            "const ${1:name} = (${2:params}) => {",
+            "\t${3}",
+            "}"
+        ],
+        "description": "Creates a named function"
+    },
+    "anonymousFunction": {
+        "prefix": "afn",
+        "body": [
+            "(${1:params}) => {",
+            "\t${2}",
+            "}"
+        ],
+        "description": "Creates an anonymous function"
+    },
+    "forEach": {
+        "prefix": "fre",
+        "body": [
+            "${1:array}.forEach(${2:item} => {",
+            "\t${0}",
+            "})"
+        ],
+        "description": "Creates a forEach statement"
+    },
+    "expressApp": {
+        "prefix": "expapp",
+        "body": [
+            "const express = require('express')",
+            "",
+            "const app = express()",
+            "",
+            "$0",
+            "",
+            "app.listen(process.env.PORT || 5000, console.log(",
+            "\t`${process.env.NODE_ENV === 'production' ? 'Production' : 'Development'} Server started on port ${process.env.PORT || 5000}...`",
+            "))"
+        ],
+        "description": "Creates an express app"
+    },
+    "expressApi": {
+        "prefix": "expapi",
+        "body": [
+            "const express = require('express')",
+            "const cors = require('cors')",
+            "",
+            "const app = express()",
+            "",
+            "app.use(cors())",
+            "app.use(express.json())",
+            "",
+            "$0",
+            "",
+            "app.listen(process.env.PORT || 5000, console.log(",
+            "\t`${process.env.NODE_ENV === 'production' ? 'Production' : 'Development'} Server started on port ${process.env.PORT || 5000}...`",
+            "))"
+        ],
+        "description": "Creates an express api server with cors"
+    },
+    "expressRouter": {
+        "prefix": "expr",
         "body": [
             "const { Router } = require('express')",
             "",
@@ -16,10 +101,46 @@
             "router.$0",
             "",
             "module.exports = router"
-        ]
+        ],
+        "description": "Creates an express router"
     },
-    "Create full express router": {
-        "prefix": "exrf",
+    "expressRouterFull": {
+        "prefix": "exprf",
+        "body": [
+            "const { Router } = require('express')",
+            "",
+            "const router = Router()",
+            "",
+            "router.get('/', (req, res) => {",
+            "",
+            "})",
+            "",
+            "router.get('/:id', (req, res) => {",
+            "",
+            "})",
+            "",
+            "router.post('/', (req, res) => {",
+            "",
+            "})",
+            "",
+            "router.put('/:id', (req, res) => {",
+            "",
+            "})",
+            "",
+            "router.patch('/:id', (req, res) => {",
+            "",
+            "})",
+            "",
+            "router.delete('/:id', (req, res) => {",
+            "",
+            "})",
+            "",
+            "module.exports = router"
+        ],
+        "description": "Creates a full express router"
+    },
+    "expressRouterFullAsync": {
+        "prefix": "exprfa",
         "body": [
             "const { Router } = require('express')",
             "",
@@ -50,72 +171,116 @@
             "})",
             "",
             "module.exports = router"
-        ]
+        ],
+        "description": "Creates a full express router with async callbacks"
     },
-    "Create Mongoose Connection": {
+    "mongooseConnection": {
         "prefix": "mc",
         "body": [
             "const mongoose = require('mongoose')",
             "",
             "mongoose",
-            "    .connect(process.env.MONGODB_URL || 'mongodb://localhost:27017', {",
-            "        useNewUrlParser: true,",
-            "        useUnifiedTopology: true,",
-            "        useCreateIndex: true",
-            "    })",
-            "    .then(() => console.log('Connected to MongoDB...'))",
-            "    .catch(err => {",
-            "        console.log(err)",
-            "        process.exit(1)",
-            "    })",
+            "\t.connect(process.env.MONGODB_URL || 'mongodb://localhost:27017', {",
+            "\t\tuseNewUrlParser: true,",
+            "\t\tuseUnifiedTopology: true,",
+            "\t\tuseCreateIndex: true",
+            "\t})",
+            "\t.then(() => console.log('Connected to MongoDB...'))",
+            "\t.catch(err => {",
+            "\t\tconsole.log(err)",
+            "\t\tprocess.exit(1)",
+            "\t})",
             "",
             "module.exports = mongoose.connection"
-        ]
+        ],
+        "description": "Creates a Mongoose Connection"
     },
-    "Create Mongoose Model": {
+    "mongooseModel": {
         "prefix": "mm",
         "body": [
             "const mongoose = require('mongoose')",
             "",
             "const $1Schema = new mongoose.Schema({",
-            "    $0",
+            "\t$0",
             "}, {",
-            "    timestamps: true",
+            "\ttimestamps: true",
             "})",
             "",
             "module.exports = mongoose.model('$1', $1Schema)"
-        ]
+        ],
+        "description": "Creates a Mongoose Model"
     },
-    "Create React Functional Component": {
+    "reactFunctionalComponent": {
         "prefix": "rfc",
         "body": [
             "import React from 'react'",
             "",
             "const $TM_FILENAME_BASE = () => {",
-            "    return (",
-            "        <>",
-            "            $0",
-            "        </>",
-            "    )",
+            "\treturn (",
+            "\t\t<>",
+            "\t\t\t$0",
+            "\t\t</>",
+            "\t)",
             "}",
             "",
             "export default $TM_FILENAME_BASE"
-        ]
+        ],
+        "description": "Creates a React Functional Component"
     },
-    "Create React Functional Component with props": {
+    "reactFunctionalComponentProps": {
         "prefix": "rfcp",
         "body": [
             "import React from 'react'",
             "",
             "const $TM_FILENAME_BASE = props => {",
-            "    return (",
-            "        <>",
-            "            $0",
-            "        </>",
-            "    )",
+            "\treturn (",
+            "\t\t<>",
+            "\t\t\t$0",
+            "\t\t</>",
+            "\t)",
             "}",
             "",
             "export default $TM_FILENAME_BASE"
+        ],
+        "description": "Creates a React Functional Component with props"
+    },
+    "createContext": {
+        "prefix": "rcontext",
+        "body": [
+            "import React from 'react'",
+            "",
+            "export default React.createContext()"
+        ],
+        "description": "Creates and exports React context"
+    },
+    "useState": {
+        "prefix": "useState",
+        "body": [
+            "const [${1:state}, set${1/(.*)/${1:/capitalize}/}] = useState(${2:initialState})"
+        ]
+    },
+    "useEffect": {
+        "prefix": "useEffect",
+        "body": [
+            "useEffect(() => {",
+            "\t${1:effect}",
+            "\treturn () => {",
+            "\t\t$2",
+            "\t}",
+            "}, [$3])",
+            "$0"
+        ]
+    },
+    "useContext": {
+        "prefix": "useContext",
+        "body": [
+            "const ${1:context} = useContext(${2:contextValue})"
+        ]
+    },
+    "useRef": {
+        "prefix": "useRef",
+        "body": [
+            "const ${1:ref} = useRef(${2:initialValue})"
         ]
     }
 }
